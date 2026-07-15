@@ -3,12 +3,11 @@
  * Database Connection class using PDO
  */
 class Database {
-    private static $host = '127.0.0.1';
-    private static $db = 'school_management';
-    private static $user = 'root';
-    private static $pass = '';
-    private static $charset = 'utf8mb4';
-    private static $pdo = null;
+    private static $host = 'sql205.infinityfree.com';
+private static $db = 'if0_42416368_school_management';
+private static $user = 'if0_42416368';
+private static $pass = 'PASSWORD_KAAGA';
+private static $charset = 'utf8mb4';
 
     /**
      * Get PDO Database connection instance
