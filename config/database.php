@@ -31,10 +31,9 @@ private static $charset = 'utf8mb4';
                     $tempPdo->exec("CREATE DATABASE IF NOT EXISTS `" . self::$db . "` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci");
                     
                     // Now reconnect with the database selected
-                    self::$pdo = new PDO($dsn, self::$user, self::$pass, $options);
-                    
-                    // Initialize the schema
-                    self::initializeSchema(self::$pdo);
+                    } catch (\PDOException $e) {
+    die("Database Error: " . $e->getMessage());
+}
                 } catch (\PDOException $innerEx) {
                     throw new \PDOException($innerEx->getMessage(), (int)$innerEx->getCode());
                 }
